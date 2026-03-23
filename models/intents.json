@@ -1,140 +1,20 @@
 {
   "intents": [
-    {
-      "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "hi how are you", "how are you"],
-      "responses": [
-        "Hello! Welcome to Community Platform. How can I help you today?",
-        "Hi there! I can help you with government services, scholarships, digital ID and more. What do you need?"
-      ]
-    },
-    {
-      "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye", "Take care"],
-      "responses": ["Goodbye! Have a wonderful day!", "See you around! Take care."]
-    },
-    {
-      "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot"],
-      "responses": ["Happy to help!", "Glad I could assist!"]
-    },
-    {
-      "tag": "mahadbt_scholarship",
-      "patterns": [
-        "mahadbt", "mahadbt scholarship", "how to fill mahadbt", "mahadbt form",
-        "scholarship form", "fill mahadbt", "mahadbt apply", "mahadbt process",
-        "give me full process to fill mahadbt scholarship form", "mahadbt registration"
-      ],
-      "responses": [
-        "Here is the full process to fill MahaDBT Scholarship Form:\n\n1. Visit: mahadbt.maharashtra.gov.in\n2. Click New Applicant Registration\n3. Enter Aadhaar number and mobile number\n4. Verify OTP and create login\n5. Fill personal details - name, DOB, address\n6. Fill academic details - college, course, marks\n7. Enter bank account details (must be in your name)\n8. Upload documents: Aadhaar, income certificate, caste certificate, marksheet, bank passbook\n9. Submit the form and note your application ID\n10. Track status on the same portal\n\nHelpline: 1800-120-8040 (Toll Free)"
-      ]
-    },
-    {
-      "tag": "aadhaar",
-      "patterns": ["aadhaar", "aadhar", "aadhaar card", "how to apply aadhaar", "aadhaar update", "download aadhaar"],
-      "responses": [
-        "For Aadhaar services:\n\n1. Download e-Aadhaar: myaadhaar.uidai.gov.in\n2. Update details: Visit nearest Aadhaar Seva Kendra\n3. New registration: Visit enrollment center with ID and address proof\n4. Lock/Unlock biometrics: myaadhaar.uidai.gov.in\n\nHelpline: 1947 (Toll Free)"
-      ]
-    },
-    {
-      "tag": "pan_card",
-      "patterns": ["pan card", "pan", "apply pan", "new pan card", "pan card status"],
-      "responses": [
-        "For PAN Card:\n\n1. Visit: onlineservices.nsdl.com\n2. Click Apply Online under PAN\n3. Fill Form 49A\n4. Upload photo, signature, address proof and ID proof\n5. Pay fee approx Rs.110\n6. Track with acknowledgment number\n\nHelpline: 020-27218080"
-      ]
-    },
-    {
-      "tag": "ration_card",
-      "patterns": ["ration card", "apply ration card", "new ration card", "how to get ration card"],
-      "responses": [
-        "For Ration Card in Maharashtra:\n\n1. Visit: rcms.mahafood.gov.in\n2. Click New Ration Card Application\n3. Fill family details and address\n4. Upload: Aadhaar of all members, address proof, income proof\n5. Submit and get application number\n6. Inspector will verify at your home\n7. Card issued within 30 days\n\nHelpline: 1967 or 1800-22-4950"
-      ]
-    },
-    {
-      "tag": "driving_licence",
-      "patterns": ["driving licence", "driving license", "apply driving licence", "how to get driving licence", "learner licence"],
-      "responses": [
-        "How to apply for Driving Licence:\n\n1. Visit: parivahan.gov.in\n2. Select your state\n3. First apply for Learner Licence\n4. Book slot for LL test at RTO\n5. Pass the LL test\n6. After 30 days apply for Permanent DL\n7. Book driving test at RTO\n8. DL delivered to your address\n\nDocuments: Age proof, Address proof, Aadhaar, Photo"
-      ]
-    },
-    {
-      "tag": "voter_id",
-      "patterns": ["voter id", "voter card", "apply voter id", "voter registration", "new voter id"],
-      "responses": [
-        "How to apply for Voter ID:\n\n1. Visit: voters.eci.gov.in\n2. Click Register as New Voter\n3. Fill Form 6 online\n4. Upload: Age proof, Address proof, Photo\n5. BLO will verify at your address\n6. Voter ID issued within 30 days\n\nHelpline: 1950"
-      ]
-    },
-    {
-      "tag": "passport",
-      "patterns": ["passport", "apply passport", "new passport", "passport renewal", "how to get passport"],
-      "responses": [
-        "How to apply for Passport:\n\n1. Visit: passportindia.gov.in\n2. Register and fill application form\n3. Book appointment at nearest PSK\n4. Visit PSK with original documents\n5. Police verification done\n6. Passport delivered in 30-45 days\n\nHelpline: 1800-258-1800"
-      ]
-    },
-    {
-      "tag": "income_certificate",
-      "patterns": ["income certificate", "apply income certificate", "how to get income certificate"],
-      "responses": [
-        "How to get Income Certificate:\n\n1. Visit: aaplesarkar.mahaonline.gov.in\n2. Register and login\n3. Search for Income Certificate\n4. Fill in family income details\n5. Upload: Aadhaar, ration card, salary slip\n6. Certificate issued within 7-15 days\n\nOr visit nearest Seva Kendra."
-      ]
-    },
-    {
-      "tag": "caste_certificate",
-      "patterns": ["caste certificate", "apply caste certificate", "sc st certificate", "obc certificate"],
-      "responses": [
-        "How to get Caste Certificate:\n\n1. Visit: aaplesarkar.mahaonline.gov.in\n2. Select Caste Certificate under revenue services\n3. Fill application with caste details\n4. Upload: Aadhaar, ration card, school leaving certificate, father's caste proof\n5. Certificate issued within 15-30 days\n\nHelpline: 1800-120-8040"
-      ]
-    },
-    {
-      "tag": "pmay",
-      "patterns": ["pmay", "pradhan mantri awas yojana", "housing scheme", "free house scheme", "apply pmay"],
-      "responses": [
-        "Pradhan Mantri Awas Yojana (PMAY):\n\n1. Visit: pmaymis.gov.in\n2. Click Citizen Assessment\n3. Select your category (EWS/LIG/MIG)\n4. Enter Aadhaar number\n5. Fill personal, income and property details\n6. Submit and note application ID\n\nEligibility: Income below Rs.18 lakh, No pucca house in family\nHelpline: 1800-11-6163"
-      ]
-    },
-    {
-      "tag": "rti",
-      "patterns": ["rti", "right to information", "file rti", "how to file rti", "rti application"],
-      "responses": [
-        "How to file RTI:\n\n1. Visit: rtionline.gov.in\n2. Click Submit Request\n3. Select ministry/department\n4. Write your information request clearly\n5. Pay Rs.10 fee online\n6. Response within 30 days\n\nTip: Be specific in your question. File First Appeal if not satisfied."
-      ]
-    },
-    {
-      "tag": "cyber_crime",
-      "patterns": ["cyber crime", "online fraud", "fraud", "scam", "hacked", "upi fraud", "bank fraud", "online cheating"],
-      "responses": [
-        "To report Cyber Crime:\n\n1. Call helpline: 1930 IMMEDIATELY for financial fraud\n2. Visit: cybercrime.gov.in\n3. Fill complaint with evidence - screenshots, transaction details\n4. Note complaint number for tracking\n\nFor UPI/Bank Fraud: Call 1930 immediately to freeze transaction!"
-      ]
-    },
-    {
-      "tag": "emergency",
-      "patterns": ["emergency", "accident", "fire", "police", "ambulance", "emergency number", "urgent help"],
-      "responses": [
-        "Emergency Numbers:\n\n🚨 All Emergencies: 112\n🚔 Police: 100\n🚑 Ambulance: 102\n🔥 Fire: 101\n👩 Women Helpline: 1091\n🧒 Child Helpline: 1098\n💻 Cyber Crime: 1930\n\nCall 112 for immediate emergency!"
-      ]
-    },
-    {
-      "tag": "government_services",
-      "patterns": ["government services", "what services", "available services", "what can you help", "list of services"],
-      "responses": [
-        "I can help you with:\n\n🪪 Digital ID: Aadhaar, PAN, Voter ID, Passport, Driving Licence\n📚 Scholarships: MahaDBT\n🏠 Housing: PMAY\n📋 Certificates: Income, Caste, Ration Card\n📢 RTI: File information requests\n🚨 Emergency: All helpline numbers\n\nJust ask about any service!"
-      ]
-    },
-    {
-      "tag": "get_help",
-      "patterns": ["I need help", "Can you help me", "help me", "help", "Need assistance"],
-      "responses": [
-        "Sure! I can help with government services, scholarships, digital ID, emergency numbers and more. What do you need?",
-        "Ask me about: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport or Emergency numbers!"
-      ]
-    },
-    {
-      "tag": "fallback",
-      "patterns": [],
-      "responses": [
-        "I can help you with: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport, RTI and emergency numbers. Please ask about these!",
-        "Sorry, I didn't understand. Try asking about scholarships, aadhaar, pan card, ration card, driving licence or emergency numbers."
-      ]
-    }
+    {"tag": "greeting", "patterns": ["Hi", "Hello", "Hey", "hi how are you", "how are you"], "responses": ["Hello! I can help you with government services, scholarships, Aadhaar, PAN card and more. What do you need?"]},
+    {"tag": "mahadbt_scholarship", "patterns": ["mahadbt", "mahadbt scholarship", "how to fill mahadbt", "mahadbt form", "scholarship form", "fill mahadbt", "mahadbt apply", "mahadbt process", "mahadbt registration"], "responses": ["MahaDBT Scholarship Process:\n1. Visit mahadbt.maharashtra.gov.in\n2. Click New Applicant Registration\n3. Enter Aadhaar and mobile number\n4. Verify OTP and create login\n5. Fill personal and academic details\n6. Enter bank account details\n7. Upload: Aadhaar, income certificate, caste certificate, marksheet, bank passbook\n8. Submit and note application ID\nHelpline: 1800-120-8040"]},
+    {"tag": "aadhaar", "patterns": ["aadhaar", "aadhar card", "aadhaar update", "download aadhaar", "aadhaar registration"], "responses": ["Aadhaar Services:\n1. Download e-Aadhaar: myaadhaar.uidai.gov.in\n2. Update details: Visit Aadhaar Seva Kendra\n3. New registration: Visit enrollment center\n4. Biometric lock: myaadhaar.uidai.gov.in\nHelpline: 1947"]},
+    {"tag": "pan_card", "patterns": ["pan card", "apply pan", "new pan card", "pan card status", "pan card apply"], "responses": ["PAN Card Process:\n1. Visit onlineservices.nsdl.com\n2. Click Apply Online under PAN\n3. Fill Form 49A\n4. Upload photo, signature, ID proof\n5. Pay Rs.110 fee\n6. Track with acknowledgment number\nHelpline: 020-27218080"]},
+    {"tag": "ration_card", "patterns": ["ration card", "apply ration card", "new ration card", "how to get ration card"], "responses": ["Ration Card Maharashtra:\n1. Visit rcms.mahafood.gov.in\n2. Click New Ration Card Application\n3. Fill family and address details\n4. Upload: Aadhaar, address proof, income proof\n5. Inspector will verify at home\n6. Card issued within 30 days\nHelpline: 1967"]},
+    {"tag": "driving_licence", "patterns": ["driving licence", "driving license", "apply driving licence", "learner licence", "how to get driving licence"], "responses": ["Driving Licence Process:\n1. Visit parivahan.gov.in\n2. Apply for Learner Licence first\n3. Book and pass LL test at RTO\n4. After 30 days apply for Permanent DL\n5. Pass driving test at RTO\n6. DL delivered to address\nDocuments: Age proof, Address proof, Aadhaar, Photo"]},
+    {"tag": "voter_id", "patterns": ["voter id", "voter card", "apply voter id", "voter registration", "new voter id"], "responses": ["Voter ID Process:\n1. Visit voters.eci.gov.in\n2. Click Register as New Voter\n3. Fill Form 6 online\n4. Upload: Age proof, Address proof, Photo\n5. BLO will verify at address\n6. Voter ID issued within 30 days\nHelpline: 1950"]},
+    {"tag": "passport", "patterns": ["passport", "apply passport", "new passport", "passport renewal", "how to get passport"], "responses": ["Passport Process:\n1. Visit passportindia.gov.in\n2. Register and fill application\n3. Book appointment at PSK\n4. Visit with original documents\n5. Police verification done\n6. Passport in 30-45 days\nHelpline: 1800-258-1800"]},
+    {"tag": "income_certificate", "patterns": ["income certificate", "apply income certificate", "how to get income certificate"], "responses": ["Income Certificate:\n1. Visit aaplesarkar.mahaonline.gov.in\n2. Search Income Certificate\n3. Fill family income details\n4. Upload: Aadhaar, ration card, salary slip\n5. Certificate in 7-15 days\nOr visit nearest Seva Kendra"]},
+    {"tag": "caste_certificate", "patterns": ["caste certificate", "sc st certificate", "obc certificate", "apply caste certificate"], "responses": ["Caste Certificate:\n1. Visit aaplesarkar.mahaonline.gov.in\n2. Select Caste Certificate\n3. Fill caste details\n4. Upload: Aadhaar, ration card, school certificate, father caste proof\n5. Certificate in 15-30 days\nHelpline: 1800-120-8040"]},
+    {"tag": "emergency", "patterns": ["emergency", "accident", "fire", "police", "ambulance", "emergency number", "urgent help"], "responses": ["Emergency Numbers:\n🚨 All Emergencies: 112\n🚔 Police: 100\n🚑 Ambulance: 102\n🔥 Fire: 101\n👩 Women Helpline: 1091\n🧒 Child Helpline: 1098\n💻 Cyber Crime: 1930\nCall 112 for immediate emergency!"]},
+    {"tag": "cyber_crime", "patterns": ["cyber crime", "online fraud", "fraud", "scam", "hacked", "upi fraud", "bank fraud"], "responses": ["Report Cyber Crime:\n1. Call 1930 IMMEDIATELY for financial fraud\n2. Visit cybercrime.gov.in\n3. Fill complaint with screenshots and transaction details\n4. Note complaint number\nFor UPI/Bank Fraud call 1930 immediately!"]},
+    {"tag": "get_help", "patterns": ["I need help", "help me", "help", "can you help"], "responses": ["I can help with: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport, Emergency numbers. What do you need?"]},
+    {"tag": "thanks", "patterns": ["thanks", "thank you", "thanks a lot"], "responses": ["Happy to help! Let me know if you need anything else."]},
+    {"tag": "goodbye", "patterns": ["bye", "goodbye", "see you"], "responses": ["Goodbye! Have a great day!"]},
+    {"tag": "fallback", "patterns": [], "responses": ["I can help with: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport, RTI, Cyber crime and Emergency numbers. Please ask about these!"]}
   ]
 }
