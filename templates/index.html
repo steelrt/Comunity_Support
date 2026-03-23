@@ -177,18 +177,22 @@
     function closeChat() { chatWindow.classList.remove('open'); }
     function addMsg(text, type) { const div = document.createElement('div'); div.className = 'msg ' + type; div.textContent = text; messagesEl.appendChild(div); messagesEl.scrollTop = messagesEl.scrollHeight; }
     async function sendMessage() {
-      const text = inputEl.value.trim(); if (!text) return;
-      addMsg(text, 'user'); inputEl.value = '';
-      const lower = text.toLowerCase();
-      let reply = "I'm connecting you to our support team. Please hold on!";
-      if (lower.includes('hello') || lower.includes('hi')) reply = "Hello! 👋 How can I assist you today?";
-      else if (lower.includes('service')) reply = "We offer government services, digital ID, civic engagement, and more. Click any card to explore!";
-      else if (lower.includes('emergency')) reply = "For emergencies, call 112 (All India) or visit our Emergency Help page immediately!";
-      else if (lower.includes('event')) reply = "Check our Events & Meetups page for upcoming community activities! 📅";
-      else if (lower.includes('report')) reply = "To report an issue, visit our Report an Issue page and fill in the details. 📋";
-      else if (lower.includes('bye') || lower.includes('thank')) reply = "Thank you! Have a wonderful day. 🙏";
-      setTimeout(() => addMsg(reply, 'bot'), 600);
-    }
+  const text = inputEl.value.trim();
+  if (!text) return;
+  addMsg(text, 'user');
+  inputEl.value = '';
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    setTimeout(() => addMsg(data.response, 'bot'), 400);
+  } catch (err) {
+    setTimeout(() => addMsg("Sorry, something went wrong!", 'bot'), 400);
+  }
+}
   </script>
 </body>
 </html>
