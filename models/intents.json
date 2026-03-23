@@ -1,0 +1,112 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi", "Hello", "Hey", "Good morning", "Good evening", "Is anyone there?", "Howdy"
+      ],
+      "responses": [
+        "Hello! Welcome to our community. How can I help you today?",
+        "Hi there! What can I do for you?",
+        "Hey! Great to see you. How can I assist?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye", "See you later", "Goodbye", "I'm leaving", "Take care", "Catch you later"
+      ],
+      "responses": [
+        "Goodbye! Have a wonderful day!",
+        "See you around! Take care.",
+        "Bye! Don't hesitate to reach out if you need anything."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks a lot", "Much appreciated"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Anytime! That's what the community is here for.",
+        "Glad I could assist. Let me know if you need anything else."
+      ]
+    },
+    {
+      "tag": "join_community",
+      "patterns": [
+        "How do I join?", "How to become a member?", "I want to join", "Sign up process", "How to register?", "Can I join the community?"
+      ],
+      "responses": [
+        "Joining is easy! Head over to our website and click on 'Sign Up' to create your account.",
+        "You can register at our website. It only takes a few minutes to become a member!",
+        "To join, visit our registration page and fill in your details. Welcome aboard!"
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "Any upcoming events?", "What events are happening?", "Community events", "Are there any meetups?", "When is the next event?"
+      ],
+      "responses": [
+        "Check out our Events page for the latest upcoming community meetups and activities!",
+        "We regularly host events. Visit the Events section on our website to stay updated.",
+        "Great question! Our community calendar is updated weekly with new events and meetups."
+      ]
+    },
+    {
+      "tag": "report_issue",
+      "patterns": [
+        "I want to report a problem", "Someone is being rude", "Report a user", "There's an issue", "I have a complaint", "Flag inappropriate content"
+      ],
+      "responses": [
+        "We're sorry to hear that. Please use the 'Report' button on the post or contact our moderators directly.",
+        "Thank you for flagging this. You can report issues using the report feature or email our moderation team.",
+        "Our moderation team is here to help. Please submit a report and we'll look into it promptly."
+      ]
+    },
+    {
+      "tag": "community_rules",
+      "patterns": [
+        "What are the rules?", "Community guidelines", "What is allowed?", "Code of conduct", "Rules of the community"
+      ],
+      "responses": [
+        "Our community is built on respect and kindness. You can read the full guidelines on our Rules page.",
+        "We have a few simple rules: be respectful, no spam, and help each other. Full details are on our Guidelines page.",
+        "Please check our Code of Conduct page for detailed community rules and expectations."
+      ]
+    },
+    {
+      "tag": "get_help",
+      "patterns": [
+        "I need help", "Can you help me?", "I have a question", "Support please", "Need assistance", "Help me"
+      ],
+      "responses": [
+        "Of course! Tell me what you need help with and I'll do my best to assist.",
+        "I'm here to help! What's on your mind?",
+        "Sure thing! Go ahead and describe your issue and we'll figure it out together."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How do I contact support?", "Email address", "Contact the team", "Reach out to admins", "Talk to a human"
+      ],
+      "responses": [
+        "You can reach our support team at support@ourcommunity.com or through the Contact Us page.",
+        "For direct assistance, email us or use the Contact form on our website.",
+        "Our team is available via email and the community help desk. We usually respond within 24 hours."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm not sure I understand. Could you rephrase that?",
+        "Hmm, I didn't quite get that. Can you try asking differently?",
+        "I'm still learning! For complex queries, please reach out to our support team."
+      ]
+    }
+  ]
+}

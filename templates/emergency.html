@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Help – Community Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--navy:#0d1b2a;--blue:#1a56db;--teal:#0ea5e9;--red:#ef4444;--orange:#f97316;--white:#f8fafc;--gray:#94a3b8;--card-bg:#162032;--border:rgba(255,255,255,0.07);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(239,68,68,0.08) 0%,transparent 60%);pointer-events:none;z-index:0;}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(13,27,42,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;}
+    .nav-logo .icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;display:flex;align-items:center;justify-content:center;}
+    .back-btn{display:inline-flex;align-items:center;gap:0.4rem;color:var(--gray);text-decoration:none;font-size:0.9rem;border:1px solid var(--border);padding:0.4rem 1rem;border-radius:8px;transition:color 0.2s;}
+    .back-btn:hover{color:var(--white);}
+
+    /* SOS Banner */
+    .sos-banner{position:relative;z-index:1;margin:2rem 3rem;background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05));border:1px solid rgba(239,68,68,0.4);border-radius:16px;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+    .sos-left{display:flex;align-items:center;gap:1rem;}
+    .sos-icon{font-size:2.5rem;}
+    .sos-left h2{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:700;color:var(--red);}
+    .sos-left p{color:var(--gray);font-size:0.9rem;margin-top:0.2rem;}
+    .sos-number{display:flex;gap:0.8rem;flex-wrap:wrap;}
+    .sos-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--red);color:white;text-decoration:none;padding:0.7rem 1.4rem;border-radius:10px;font-weight:700;font-size:1.1rem;transition:transform 0.2s;box-shadow:0 4px 20px rgba(239,68,68,0.4);}
+    .sos-btn:hover{transform:scale(1.04);}
+
+    .page-hero{position:relative;z-index:1;padding:2rem 3rem 2rem;max-width:1200px;margin:0 auto;}
+    .breadcrumb{font-size:0.8rem;color:var(--gray);margin-bottom:1rem;}
+    .breadcrumb a{color:var(--red);text-decoration:none;}
+    .page-icon{width:64px;height:64px;border-radius:16px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem;animation:fadeUp 0.5s ease both;}
+    .page-hero h1{font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.5s ease 0.1s both;}
+    .page-hero p{color:var(--gray);font-size:1.05rem;max-width:600px;line-height:1.7;animation:fadeUp 0.5s ease 0.2s both;}
+
+    .section{position:relative;z-index:1;padding:0.5rem 3rem 3rem;max-width:1200px;margin:0 auto;}
+    .section-title{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:1.5rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border);}
+
+    /* Hotline cards */
+    .hotline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:3rem;}
+    .hotline-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.4rem;text-align:center;transition:transform 0.2s,border-color 0.2s;}
+    .hotline-card:hover{transform:translateY(-3px);border-color:rgba(239,68,68,0.3);}
+    .hotline-card .h-icon{font-size:2rem;margin-bottom:0.8rem;}
+    .hotline-card h3{font-size:0.9rem;font-weight:600;margin-bottom:0.4rem;color:var(--gray);}
+    .hotline-card .number{font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:700;color:var(--red);}
+    .hotline-card a{text-decoration:none;color:inherit;}
+    .hotline-card p{color:var(--gray);font-size:0.78rem;margin-top:0.4rem;}
+
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:3rem;}
+    .link-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
+    .link-card:hover{transform:translateY(-3px);border-color:rgba(239,68,68,0.3);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+    .link-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px;}
+    .link-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;}
+    .link-card p{color:var(--gray);font-size:0.82rem;line-height:1.5;}
+    .link-badge{display:inline-block;margin-top:0.6rem;font-size:0.75rem;color:var(--red);background:rgba(239,68,68,0.1);padding:0.2rem 0.6rem;border-radius:100px;}
+
+    .warning-box{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:1.2rem 1.5rem;color:var(--gray);font-size:0.88rem;line-height:1.6;margin-top:1rem;}
+    .warning-box strong{color:var(--white);}
+
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;color:var(--gray);font-size:0.85rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:640px){nav,footer,.page-hero,.section,.sos-banner{padding-left:1.2rem;padding-right:1.2rem;} .sos-banner{margin-left:1.2rem;margin-right:1.2rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo"><div class="icon">🏛️</div>Community Platform</a>
+    <a href="/" class="back-btn">← Back to Home</a>
+  </nav>
+
+  <!-- SOS Banner -->
+  <div class="sos-banner">
+    <div class="sos-left">
+      <div class="sos-icon">🚨</div>
+      <div>
+        <h2>Life-Threatening Emergency?</h2>
+        <p>Call the All India Emergency Number immediately</p>
+      </div>
+    </div>
+    <div class="sos-number">
+      <a href="tel:112" class="sos-btn">📞 Call 112</a>
+    </div>
+  </div>
+
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/">Home</a> › Emergency Help</div>
+    <div class="page-icon">🆘</div>
+    <h1>Emergency Help</h1>
+    <p>Quick access to emergency helplines, crisis resources, and official portals for immediate assistance.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📞 Emergency Helpline Numbers</div>
+    <div class="hotline-grid">
+      <div class="hotline-card"><div class="h-icon">🚔</div><h3>Police</h3><a href="tel:100"><div class="number">100</div></a><p>Dial for police emergencies</p></div>
+      <div class="hotline-card"><div class="h-icon">🚑</div><h3>Ambulance</h3><a href="tel:102"><div class="number">102</div></a><p>Medical emergency ambulance</p></div>
+      <div class="hotline-card"><div class="h-icon">🔥</div><h3>Fire Brigade</h3><a href="tel:101"><div class="number">101</div></a><p>Fire & rescue services</p></div>
+      <div class="hotline-card"><div class="h-icon">🆘</div><h3>All Emergencies</h3><a href="tel:112"><div class="number">112</div></a><p>Unified emergency helpline</p></div>
+      <div class="hotline-card"><div class="h-icon">👩</div><h3>Women Helpline</h3><a href="tel:1091"><div class="number">1091</div></a><p>Women in distress</p></div>
+      <div class="hotline-card"><div class="h-icon">🧒</div><h3>Child Helpline</h3><a href="tel:1098"><div class="number">1098</div></a><p>CHILDLINE for children</p></div>
+      <div class="hotline-card"><div class="h-icon">🧠</div><h3>Mental Health</h3><a href="tel:9152987821"><div class="number" style="font-size:1.2rem;">iCall</div></a><p>9152987821 – free counselling</p></div>
+      <div class="hotline-card"><div class="h-icon">💻</div><h3>Cyber Crime</h3><a href="tel:1930"><div class="number">1930</div></a><p>Online fraud & cyber crime</p></div>
+    </div>
+
+    <div class="section-title">🌐 Emergency Portals & Resources</div>
+    <div class="links-grid">
+      <a href="https://112.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🚨</div>
+        <div><h3>Emergency Response (112 India)</h3><p>Official portal for the ERSS system — track complaints, get help locating services.</p><span class="link-badge">112.gov.in</span></div>
+      </a>
+      <a href="https://ndma.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🌪️</div>
+        <div><h3>NDMA – Disaster Management</h3><p>Natural disaster alerts, relief resources, flood/earthquake safety guidelines.</p><span class="link-badge">ndma.gov.in</span></div>
+      </a>
+      <a href="https://cybercrime.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🔐</div>
+        <div><h3>Cyber Crime Reporting</h3><p>Report online fraud, phishing, cyberbullying, and financial scam cases.</p><span class="link-badge">cybercrime.gov.in</span></div>
+      </a>
+      <a href="https://www.mohfw.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🏥</div>
+        <div><h3>Health Emergency (MoHFW)</h3><p>Epidemic alerts, hospital locator, health helplines and medical guidance.</p><span class="link-badge">mohfw.gov.in</span></div>
+      </a>
+      <a href="https://www.ncpcr.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🧒</div>
+        <div><h3>Child Protection (NCPCR)</h3><p>Report child abuse, trafficking, labour exploitation to child rights commission.</p><span class="link-badge">ncpcr.gov.in</span></div>
+      </a>
+      <a href="https://wcd.nic.in" target="_blank" class="link-card">
+        <div class="link-icon">👩‍👧</div>
+        <div><h3>Women & Child Welfare</h3><p>Resources for women in distress, domestic violence help, shelter homes.</p><span class="link-badge">wcd.nic.in</span></div>
+      </a>
+    </div>
+    <div class="warning-box"><strong>⚠️ Remember:</strong> For immediate life-threatening emergencies always call <strong>112</strong> first. Online portals are for follow-up reporting only and may not be monitored in real time.</div>
+  </div>
+  <footer><span>© 2024 Community Platform</span><span><a href="/" style="color:var(--red);text-decoration:none;">← Back to Home</a></span></footer>
+</body>
+</html>

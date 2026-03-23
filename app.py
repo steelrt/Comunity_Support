@@ -1,0 +1,181 @@
+from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
+import json
+import os
+from datetime import datetime
+
+app = Flask(__name__)
+CORS(app)
+
+# Load intents for chatbot
+with open('models/intents.json', 'r') as f:
+    intents = json.load(f)
+
+# ==================== MAIN ROUTES ====================
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# ==================== SERVICE PAGES ====================
+
+@app.route('/services/government')
+def government():
+    return render_template('government.html')
+
+@app.route('/services/digital-id')
+def digital_id():
+    return render_template('digital-id.html')
+
+@app.route('/services/engagement')
+def engagement():
+    return render_template('engagement.html')
+
+@app.route('/services/report')
+def report():
+    return render_template('report.html')
+
+@app.route('/services/events')
+def events():
+    return render_template('events.html')
+
+@app.route('/services/emergency')
+def emergency():
+    return render_template('emergency.html')
+
+# ==================== DETAILED SERVICE PAGES ====================
+
+@app.route('/services/<service_name>')
+def service_detail(service_name):
+    """Individual service detail page"""
+    services = {
+        'birth-certificate': {
+            'title': 'Birth Certificate',
+            'category': 'Government Services',
+            'description': 'Apply for and obtain your birth certificate online.',
+            'steps': [
+                'Visit the official portal',
+                'Fill in required details',
+                'Upload supporting documents',
+                'Pay applicable fee',
+                'Track application status'
+            ],
+            'documents_needed': ['ID Proof', 'Address Proof', 'Parent Details'],
+            'processing_time': '7-10 days'
+        },
+        'driving-license': {
+            'title': 'Driving License',
+            'category': 'Government Services',
+            'description': 'Apply for your driving license online.',
+            'steps': [
+                'Register on RTO portal',
+                'Book appointment',
+                'Take learning license test',
+                'Complete driving test',
+                'Receive DL certificate'
+            ],
+            'documents_needed': ['Age Proof', 'Address Proof', 'Medical Certificate'],
+            'processing_time': '15-30 days'
+        },
+        'aadhaar': {
+            'title': 'Aadhaar Registration',
+            'category': 'Digital Identity',
+            'description': 'Register for Aadhaar - Your unique 12-digit identity.',
+            'steps': [
+                'Visit Aadhaar enrollment center',
+                'Provide biometric data',
+                'Verify OTP',
+                'Wait for Aadhaar letter'
+            ],
+            'documents_needed': ['Proof of Residence', 'Proof of Identity'],
+            'processing_time': '90 days'
+        },
+        'feedback': {
+            'title': 'Feedback & Suggestions',
+            'category': 'Citizen Engagement',
+            'description': 'Share your valuable feedback and suggestions.',
+            'steps': [
+                'Select category',
+                'Write your feedback',
+                'Attach documents if needed',
+                'Submit and track status'
+            ],
+            'documents_needed': [],
+            'processing_time': '5-7 days'
+        }
+    }
+
+    service = services.get(service_name)
+    if service:
+        return jsonify(service)
+    return jsonify({'error': 'Service not found'}), 404
+
+# ==================== CHATBOT API ====================
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """Chatbot endpoint"""
+    try:
+        user_message = request.json.get('message', '').lower().strip()
+
+        if not user_message:
+            return jsonify({'error': 'Empty message'}), 400
+
+        response = find_intent_response(user_message)
+
+        return jsonify({
+            'response': response,
+            'timestamp': datetime.now().isoformat()
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+def find_intent_response(user_message):
+    """Find matching response from intents"""
+    for intent in intents.get('intents', []):
+        for pattern in intent.get('patterns', []):
+            if pattern.lower() in user_message or user_message in pattern.lower():
+                import random
+                responses = intent.get('responses', [])
+                return random.choice(responses) if responses else "I'm not sure about that."
+
+    return "Sorry, I didn't understand that. Can I help you with our services like Government Services, Digital Identity, or Citizen Engagement?"
+
+# ==================== API ENDPOINTS ====================
+
+@app.route('/api/services')
+def get_all_services():
+    """Get all available services"""
+    return jsonify({
+        'services': [
+            {'id': 1, 'name': 'Online Government Services', 'link': '/services/government'},
+            {'id': 2, 'name': 'Digital Identity & Security', 'link': '/services/digital-id'},
+            {'id': 3, 'name': 'Citizen Engagement Initiatives', 'link': '/services/engagement'},
+            {'id': 4, 'name': 'Report an Issue', 'link': '/services/report'},
+            {'id': 5, 'name': 'Events & Meetups', 'link': '/services/events'},
+            {'id': 6, 'name': 'Emergency Help', 'link': '/services/emergency'},
+        ]
+    })
+
+@app.route('/api/announcements')
+def get_announcements():
+    """Get latest announcements"""
+    return jsonify({
+        'announcements': [
+            {'title': 'New Service Added', 'date': '2024-03-23', 'description': 'Check our new digital services'},
+            {'title': 'Maintenance Notice', 'date': '2024-03-22', 'description': 'Portal will be down for maintenance'},
+        ]
+    })
+
+# ==================== ERROR HANDLERS ====================
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({'error': 'Page not found'}), 404
+
+@app.errorhandler(500)
+def server_error(error):
+    return jsonify({'error': 'Server error'}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)

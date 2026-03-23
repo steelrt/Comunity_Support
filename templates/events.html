@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events & Meetups – Community Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--navy:#0d1b2a;--blue:#1a56db;--blue-light:#3b82f6;--teal:#0ea5e9;--purple:#8b5cf6;--white:#f8fafc;--gray:#94a3b8;--card-bg:#162032;--border:rgba(255,255,255,0.07);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 100% 50%,rgba(139,92,246,0.1) 0%,transparent 60%);pointer-events:none;z-index:0;}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(13,27,42,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;}
+    .nav-logo .icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;display:flex;align-items:center;justify-content:center;}
+    .back-btn{display:inline-flex;align-items:center;gap:0.4rem;color:var(--gray);text-decoration:none;font-size:0.9rem;border:1px solid var(--border);padding:0.4rem 1rem;border-radius:8px;transition:color 0.2s;}
+    .back-btn:hover{color:var(--white);border-color:rgba(255,255,255,0.2);}
+    .page-hero{position:relative;z-index:1;padding:4rem 3rem 3rem;max-width:1200px;margin:0 auto;}
+    .breadcrumb{font-size:0.8rem;color:var(--gray);margin-bottom:1rem;}
+    .breadcrumb a{color:var(--purple);text-decoration:none;}
+    .page-icon{width:64px;height:64px;border-radius:16px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem;animation:fadeUp 0.5s ease both;}
+    .page-hero h1{font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.5s ease 0.1s both;}
+    .page-hero p{color:var(--gray);font-size:1.05rem;max-width:600px;line-height:1.7;animation:fadeUp 0.5s ease 0.2s both;}
+    .section{position:relative;z-index:1;padding:1rem 3rem 4rem;max-width:1200px;margin:0 auto;}
+    .section-title{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:1.5rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border);}
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:3rem;}
+    .link-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
+    .link-card:hover{transform:translateY(-3px);border-color:rgba(139,92,246,0.35);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+    .link-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px;}
+    .link-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;}
+    .link-card p{color:var(--gray);font-size:0.82rem;line-height:1.5;}
+    .link-badge{display:inline-block;margin-top:0.6rem;font-size:0.75rem;color:var(--purple);background:rgba(139,92,246,0.1);padding:0.2rem 0.6rem;border-radius:100px;}
+    .info-box{background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.2);border-radius:12px;padding:1.2rem 1.5rem;color:var(--gray);font-size:0.88rem;line-height:1.6;margin-top:1rem;}
+    .info-box strong{color:var(--white);}
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;color:var(--gray);font-size:0.85rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:640px){nav,footer,.page-hero,.section{padding-left:1.2rem;padding-right:1.2rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo"><div class="icon">🏛️</div>Community Platform</a>
+    <a href="/" class="back-btn">← Back to Home</a>
+  </nav>
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/">Home</a> › Events & Meetups</div>
+    <div class="page-icon">📅</div>
+    <h1>Events & Meetups</h1>
+    <p>Discover civic events, government workshops, town halls, and community meetups happening near you.</p>
+  </div>
+  <div class="section">
+    <div class="section-title">🏛️ Government & Civic Events</div>
+    <div class="links-grid">
+      <a href="https://www.mygov.in/campaigns" target="_blank" class="link-card">
+        <div class="link-icon">🇮🇳</div>
+        <div><h3>MyGov Campaigns</h3><p>Participate in government-run civic campaigns, hackathons, and citizen events.</p><span class="link-badge">mygov.in</span></div>
+      </a>
+      <a href="https://www.niti.gov.in/events" target="_blank" class="link-card">
+        <div class="link-icon">📊</div>
+        <div><h3>NITI Aayog Events</h3><p>Policy dialogues, innovation summits, and development workshops by NITI Aayog.</p><span class="link-badge">niti.gov.in</span></div>
+      </a>
+      <a href="https://india.gov.in/events" target="_blank" class="link-card">
+        <div class="link-icon">🌐</div>
+        <div><h3>National Events Calendar</h3><p>Browse all official government events, national days, and civic programmes.</p><span class="link-badge">india.gov.in</span></div>
+      </a>
+    </div>
+
+    <div class="section-title">🤝 Community & Local Meetups</div>
+    <div class="links-grid">
+      <a href="https://www.meetup.com" target="_blank" class="link-card">
+        <div class="link-icon">👥</div>
+        <div><h3>Meetup.com</h3><p>Find local community groups, civic tech meetups, and social impact events in your city.</p><span class="link-badge">meetup.com</span></div>
+      </a>
+      <a href="https://www.townhallproject.com" target="_blank" class="link-card">
+        <div class="link-icon">🏙️</div>
+        <div><h3>Town Hall Events</h3><p>Connect with local officials and participate in public town hall meetings.</p><span class="link-badge">townhallproject.com</span></div>
+      </a>
+      <a href="https://www.volunteer-world.com/india" target="_blank" class="link-card">
+        <div class="link-icon">💚</div>
+        <div><h3>Volunteering India</h3><p>Join community service events, NGO drives, and local volunteer opportunities.</p><span class="link-badge">volunteer-world.com</span></div>
+      </a>
+    </div>
+
+    <div class="section-title">🎓 Learning & Skill Events</div>
+    <div class="links-grid">
+      <a href="https://www.skillindiadigital.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">💡</div>
+        <div><h3>Skill India – Workshops</h3><p>Government-run skill development workshops, training events and courses near you.</p><span class="link-badge">skillindiadigital.gov.in</span></div>
+      </a>
+      <a href="https://www.startupindia.gov.in/content/sih/en/events.html" target="_blank" class="link-card">
+        <div class="link-icon">🚀</div>
+        <div><h3>Startup India Events</h3><p>Entrepreneurship bootcamps, investor meetups, and startup ecosystem events.</p><span class="link-badge">startupindia.gov.in</span></div>
+      </a>
+      <a href="https://www.nasscom.in/events" target="_blank" class="link-card">
+        <div class="link-icon">💻</div>
+        <div><h3>NASSCOM Tech Events</h3><p>Technology, AI, and digital India events from India's leading tech industry body.</p><span class="link-badge">nasscom.in</span></div>
+      </a>
+    </div>
+    <div class="info-box"><strong>📌 Tip:</strong> Follow <strong>MyGov India</strong> on social media to stay updated on all upcoming government campaigns, contests, and civic participation opportunities.</div>
+  </div>
+  <footer><span>© 2024 Community Platform</span><span><a href="/" style="color:var(--purple);text-decoration:none;">← Back to Home</a></span></footer>
+</body>
+</html>

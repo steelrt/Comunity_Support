@@ -1,0 +1,282 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "greetings",
+        "what's up",
+        "how are you"
+      ],
+      "responses": [
+        "Hello! Welcome to Community Platform. How can I assist you today?",
+        "Hi there! I'm here to help with government services and civic engagement. What do you need?",
+        "Welcome! What service can I help you with?"
+      ]
+    },
+    {
+      "tag": "government_services",
+      "patterns": [
+        "government services",
+        "online services",
+        "birth certificate",
+        "driving license",
+        "ration card",
+        "property registration",
+        "income certificate",
+        "government help"
+      ],
+      "responses": [
+        "We offer various government services including Birth Certificates, Driving Licenses, Property Registration, Income Certificates, and Ration Cards. Which one would you like to know more about?",
+        "Government services are available online. You can apply for Birth Certificates, Licenses, and many other documents without visiting offices.",
+        "Our government services section includes all major documents and certifications. Click on 'Government Services' to explore."
+      ]
+    },
+    {
+      "tag": "digital_identity",
+      "patterns": [
+        "digital identity",
+        "aadhaar",
+        "digital signature",
+        "pan card",
+        "ekyc",
+        "digital security",
+        "id verification"
+      ],
+      "responses": [
+        "We help with Aadhaar registration, PAN cards, digital signatures, and e-KYC verification. All these services ensure your digital identity is secure and verified.",
+        "Digital Identity services include Aadhaar enrollment, digital signatures, and identity verification. Check our Digital Identity & Security section for more details.",
+        "For secure digital identification, we offer Aadhaar registration, PAN card application, and e-KYC services."
+      ]
+    },
+    {
+      "tag": "citizen_engagement",
+      "patterns": [
+        "citizen engagement",
+        "community events",
+        "volunteer",
+        "feedback",
+        "grievance",
+        "civic initiatives",
+        "local announcements"
+      ],
+      "responses": [
+        "You can participate in community events, volunteer programs, provide feedback, and report grievances. We value citizen participation in civic initiatives.",
+        "Our Citizen Engagement section includes events, volunteer opportunities, feedback channels, and grievance redressal systems.",
+        "We encourage community involvement through events, volunteering, and feedback. You can also file grievances and stay updated with announcements."
+      ]
+    },
+    {
+      "tag": "requirements",
+      "patterns": [
+        "what documents do i need",
+        "required documents",
+        "what documents",
+        "documents needed",
+        "requirements"
+      ],
+      "responses": [
+        "Different services require different documents. Each service page lists the specific documents you'll need. Generally, you'll need ID proof and address proof.",
+        "Document requirements vary by service. Please check the specific service page for detailed requirements.",
+        "Click on the service you're interested in to see the complete list of required documents."
+      ]
+    },
+    {
+      "tag": "processing_time",
+      "patterns": [
+        "how long does it take",
+        "processing time",
+        "duration",
+        "how many days",
+        "time required"
+      ],
+      "responses": [
+        "Processing times vary: Birth Certificates take 7-10 days, Driving Licenses 15-30 days, and Aadhaar about 90 days. Check the specific service for exact timelines.",
+        "Most documents are processed within 5-30 days depending on the service. You can track your application status anytime.",
+        "Processing time depends on the service. The service details page will show you the expected timeline."
+      ]
+    },
+    {
+      "tag": "how_to_apply",
+      "patterns": [
+        "how do i apply",
+        "how to apply",
+        "apply for",
+        "application process",
+        "steps to apply"
+      ],
+      "responses": [
+        "To apply for any service: 1) Visit the service page, 2) Fill your details, 3) Upload documents, 4) Pay fees, 5) Track status. It's that simple!",
+        "The application process is straightforward: Select a service, fill the form, upload required documents, make payment, and you'll receive confirmation.",
+        "Each service has step-by-step instructions. Visit the service page and follow the process. You can also chat with us for specific guidance."
+      ]
+    },
+    {
+      "tag": "payment",
+      "patterns": [
+        "payment",
+        "fees",
+        "cost",
+        "how much",
+        "price",
+        "charges"
+      ],
+      "responses": [
+        "Fees vary by service. Birth Certificates are usually inexpensive, while some services may have nominal charges. Check the service page for exact fees.",
+        "Each service has transparent pricing. The cost details are mentioned on the service page before you apply.",
+        "We accept multiple payment methods including debit/credit cards, UPI, and online banking. Fees are clearly displayed during application."
+      ]
+    },
+    {
+      "tag": "tracking",
+      "patterns": [
+        "track",
+        "status",
+        "where is my application",
+        "application status",
+        "how to track"
+      ],
+      "responses": [
+        "You can track your application status anytime using your application ID. Log in to your account to see real-time updates.",
+        "Tracking is easy! Use your application reference number and we'll show you the current status of your request.",
+        "Go to the service page and enter your application ID to get instant status updates. You'll also receive email notifications."
+      ]
+    },
+    {
+      "tag": "grievance",
+      "patterns": [
+        "grievance",
+        "complaint",
+        "issue",
+        "problem",
+        "complaint redressal"
+      ],
+      "responses": [
+        "If you face any issues, please file a grievance through our Citizen Engagement section. We resolve complaints within 5-7 days.",
+        "You can report any problems or file complaints easily. Our grievance redressal system ensures your issues are addressed promptly.",
+        "We take all complaints seriously. Visit the Grievance Redressal section to file your complaint with details."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "help",
+        "assist",
+        "support",
+        "need help",
+        "can you help"
+      ],
+      "responses": [
+        "Of course! I'm here to help. You can ask about any service, requirements, application process, or anything else. What would you like to know?",
+        "I'm your community assistant. Ask me about services, how to apply, document requirements, or anything related to civic engagement.",
+        "Happy to help! Whether it's about government services, digital identity, or community initiatives, I'm here for you."
+      ]
+    },
+    {
+      "tag": "feedback",
+      "patterns": [
+        "feedback",
+        "suggest",
+        "suggestion",
+        "improve",
+        "improvement"
+      ],
+      "responses": [
+        "We'd love your feedback! Visit the Feedback & Suggestions section in Citizen Engagement. Your input helps us improve.",
+        "Your suggestions are valuable to us. Click on 'Citizen Engagement' and select 'Feedback & Suggestions' to share your thoughts.",
+        "We're committed to improvement. Please share your feedback through our platform. Go to Services > Citizen Engagement."
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "events",
+        "community events",
+        "upcoming events",
+        "when is the next event"
+      ],
+      "responses": [
+        "We organize regular community events! Check the Community Events section under Citizen Engagement for upcoming activities.",
+        "Interested in community events? Visit Citizen Engagement to see all upcoming events and register for ones that interest you.",
+        "Visit our Events page to discover what's happening in your community. You can register and get updates about new events."
+      ]
+    },
+    {
+      "tag": "volunteer",
+      "patterns": [
+        "volunteer",
+        "volunteering",
+        "volunteer program",
+        "community service"
+      ],
+      "responses": [
+        "Great! We have volunteer programs for community members. Visit Citizen Engagement > Volunteer Programs to learn more and sign up.",
+        "We offer various volunteer opportunities. Check the Volunteer Programs section to find ways you can contribute to the community.",
+        "Volunteering is a wonderful way to give back. See our Volunteer Programs section for available opportunities."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "contact",
+        "phone",
+        "email",
+        "address",
+        "how to contact"
+      ],
+      "responses": [
+        "You can reach us through our contact form, email, or phone. All contact details are available in the footer section.",
+        "For direct contact, scroll to the footer or use the contact form. We typically respond within 24 hours.",
+        "Feel free to contact us anytime. You'll find phone numbers and email addresses in the footer of this page."
+      ]
+    },
+    {
+      "tag": "login",
+      "patterns": [
+        "login",
+        "sign in",
+        "account",
+        "password",
+        "forgot password"
+      ],
+      "responses": [
+        "You can log in with your email and password. If you forgot your password, click 'Forgot Password' on the login page.",
+        "Click the Login button in the top right. Don't have an account? You can create one during the application process.",
+        "To access your applications and track status, you need to log in. Create an account with a simple sign-up process."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "take care",
+        "farewell"
+      ],
+      "responses": [
+        "Thank you for visiting! If you have more questions, feel free to chat again. Good luck with your applications!",
+        "Goodbye! We hope we could help. Don't hesitate to reach out if you need anything else.",
+        "See you soon! Thank you for using Community Platform. Have a great day!"
+      ]
+    },
+    {
+      "tag": "default",
+      "patterns": [
+        "anything else",
+        "more info",
+        "tell me more"
+      ],
+      "responses": [
+        "I can help with information about our services, application processes, document requirements, and much more. What would you like to know?",
+        "Feel free to ask about any of our services or civic programs. I'm here to help!",
+        "Is there anything specific about our services or community initiatives you'd like to know more about?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Civic Engagement – Community Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--navy:#0d1b2a;--blue:#1a56db;--blue-light:#3b82f6;--teal:#0ea5e9;--gold:#f59e0b;--white:#f8fafc;--gray:#94a3b8;--card-bg:#162032;--border:rgba(255,255,255,0.07);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(245,158,11,0.08) 0%,transparent 60%);pointer-events:none;z-index:0;}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(13,27,42,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .nav-logo{display:flex;align-items:center;gap:0.6rem;font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;}
+    .nav-logo .icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;display:flex;align-items:center;justify-content:center;}
+    .back-btn{display:inline-flex;align-items:center;gap:0.4rem;color:var(--gray);text-decoration:none;font-size:0.9rem;border:1px solid var(--border);padding:0.4rem 1rem;border-radius:8px;transition:color 0.2s;}
+    .back-btn:hover{color:var(--white);border-color:rgba(255,255,255,0.2);}
+    .page-hero{position:relative;z-index:1;padding:4rem 3rem 3rem;max-width:1200px;margin:0 auto;}
+    .breadcrumb{font-size:0.8rem;color:var(--gray);margin-bottom:1rem;}
+    .breadcrumb a{color:var(--gold);text-decoration:none;}
+    .page-icon{width:64px;height:64px;border-radius:16px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.5rem;animation:fadeUp 0.5s ease both;}
+    .page-hero h1{font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem;animation:fadeUp 0.5s ease 0.1s both;}
+    .page-hero p{color:var(--gray);font-size:1.05rem;max-width:600px;line-height:1.7;animation:fadeUp 0.5s ease 0.2s both;}
+    .section{position:relative;z-index:1;padding:1rem 3rem 4rem;max-width:1200px;margin:0 auto;}
+    .section-title{font-family:'Sora',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:1.5rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border);}
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:3rem;}
+    .link-card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
+    .link-card:hover{transform:translateY(-3px);border-color:rgba(245,158,11,0.35);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+    .link-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px;}
+    .link-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;}
+    .link-card p{color:var(--gray);font-size:0.82rem;line-height:1.5;}
+    .link-badge{display:inline-block;margin-top:0.6rem;font-size:0.75rem;color:var(--gold);background:rgba(245,158,11,0.1);padding:0.2rem 0.6rem;border-radius:100px;}
+    .info-box{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:1.2rem 1.5rem;color:var(--gray);font-size:0.88rem;line-height:1.6;margin-top:1rem;}
+    .info-box strong{color:var(--white);}
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;color:var(--gray);font-size:0.85rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:640px){nav,footer,.page-hero,.section{padding-left:1.2rem;padding-right:1.2rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo"><div class="icon">🏛️</div>Community Platform</a>
+    <a href="/" class="back-btn">← Back to Home</a>
+  </nav>
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/">Home</a> › Civic Engagement</div>
+    <div class="page-icon">🤝</div>
+    <h1>Civic Engagement</h1>
+    <p>Participate in democracy, petitions, RTI, local governance, and community decision-making through official portals.</p>
+  </div>
+  <div class="section">
+    <div class="section-title">🗳️ Democracy & Voting</div>
+    <div class="links-grid">
+      <a href="https://voters.eci.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🗳️</div>
+        <div><h3>Voter Registration (ECI)</h3><p>Register as new voter, check your name in voter list, apply for corrections.</p><span class="link-badge">voters.eci.gov.in</span></div>
+      </a>
+      <a href="https://nvsp.in" target="_blank" class="link-card">
+        <div class="link-icon">📋</div>
+        <div><h3>NVSP – National Voter Service</h3><p>Download voter ID, track application, locate polling station and booth.</p><span class="link-badge">nvsp.in</span></div>
+      </a>
+      <a href="https://www.eci.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🏛️</div>
+        <div><h3>Election Commission of India</h3><p>Official election news, results, model code of conduct, candidate info.</p><span class="link-badge">eci.gov.in</span></div>
+      </a>
+    </div>
+
+    <div class="section-title">📢 RTI & Grievances</div>
+    <div class="links-grid">
+      <a href="https://rtionline.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">📄</div>
+        <div><h3>RTI Online Portal</h3><p>File Right to Information requests to central government departments online.</p><span class="link-badge">rtionline.gov.in</span></div>
+      </a>
+      <a href="https://pgportal.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">📣</div>
+        <div><h3>Public Grievance Portal (CPGRAMS)</h3><p>Lodge grievances against central government ministries and departments.</p><span class="link-badge">pgportal.gov.in</span></div>
+      </a>
+      <a href="https://www.localbodies.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🏘️</div>
+        <div><h3>Local Body Services</h3><p>Connect with Panchayati Raj Institutions and Urban Local Bodies near you.</p><span class="link-badge">localbodies.gov.in</span></div>
+      </a>
+    </div>
+
+    <div class="section-title">📝 Petitions & Participation</div>
+    <div class="links-grid">
+      <a href="https://www.mygov.in" target="_blank" class="link-card">
+        <div class="link-icon">🇮🇳</div>
+        <div><h3>MyGov India</h3><p>Participate in government consultations, share ideas, polls and citizen surveys.</p><span class="link-badge">mygov.in</span></div>
+      </a>
+      <a href="https://www.india.gov.in" target="_blank" class="link-card">
+        <div class="link-icon">🌐</div>
+        <div><h3>National Portal of India</h3><p>Gateway to all Indian government services, schemes, and information resources.</p><span class="link-badge">india.gov.in</span></div>
+      </a>
+      <a href="https://pmindia.gov.in/en/interact-with-pm" target="_blank" class="link-card">
+        <div class="link-icon">✉️</div>
+        <div><h3>Write to the PM</h3><p>Share your ideas, suggestions or feedback directly with the Prime Minister's office.</p><span class="link-badge">pmindia.gov.in</span></div>
+      </a>
+    </div>
+    <div class="info-box"><strong>💡 Tip:</strong> RTI is your legal right under the RTI Act 2005. You can request information from any central government body within 30 days for a nominal fee of ₹10.</div>
+  </div>
+  <footer><span>© 2024 Community Platform</span><span><a href="/" style="color:var(--gold);text-decoration:none;">← Back to Home</a></span></footer>
+</body>
+</html>
