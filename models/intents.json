@@ -2,110 +2,138 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": [
-        "Hi", "Hello", "Hey", "Good morning", "Good evening", "Is anyone there?", "Howdy"
-      ],
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "hi how are you", "how are you"],
       "responses": [
-        "Hello! Welcome to our community. How can I help you today?",
-        "Hi there! What can I do for you?",
-        "Hey! Great to see you. How can I assist?"
+        "Hello! Welcome to Community Platform. How can I help you today?",
+        "Hi there! I can help you with government services, scholarships, digital ID and more. What do you need?"
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": [
-        "Bye", "See you later", "Goodbye", "I'm leaving", "Take care", "Catch you later"
-      ],
-      "responses": [
-        "Goodbye! Have a wonderful day!",
-        "See you around! Take care.",
-        "Bye! Don't hesitate to reach out if you need anything."
-      ]
+      "patterns": ["Bye", "See you later", "Goodbye", "Take care"],
+      "responses": ["Goodbye! Have a wonderful day!", "See you around! Take care."]
     },
     {
       "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot"],
+      "responses": ["Happy to help!", "Glad I could assist!"]
+    },
+    {
+      "tag": "mahadbt_scholarship",
       "patterns": [
-        "Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks a lot", "Much appreciated"
+        "mahadbt", "mahadbt scholarship", "how to fill mahadbt", "mahadbt form",
+        "scholarship form", "fill mahadbt", "mahadbt apply", "mahadbt process",
+        "give me full process to fill mahadbt scholarship form", "mahadbt registration"
       ],
       "responses": [
-        "Happy to help!",
-        "Anytime! That's what the community is here for.",
-        "Glad I could assist. Let me know if you need anything else."
+        "Here is the full process to fill MahaDBT Scholarship Form:\n\n1. Visit: mahadbt.maharashtra.gov.in\n2. Click New Applicant Registration\n3. Enter Aadhaar number and mobile number\n4. Verify OTP and create login\n5. Fill personal details - name, DOB, address\n6. Fill academic details - college, course, marks\n7. Enter bank account details (must be in your name)\n8. Upload documents: Aadhaar, income certificate, caste certificate, marksheet, bank passbook\n9. Submit the form and note your application ID\n10. Track status on the same portal\n\nHelpline: 1800-120-8040 (Toll Free)"
       ]
     },
     {
-      "tag": "join_community",
-      "patterns": [
-        "How do I join?", "How to become a member?", "I want to join", "Sign up process", "How to register?", "Can I join the community?"
-      ],
+      "tag": "aadhaar",
+      "patterns": ["aadhaar", "aadhar", "aadhaar card", "how to apply aadhaar", "aadhaar update", "download aadhaar"],
       "responses": [
-        "Joining is easy! Head over to our website and click on 'Sign Up' to create your account.",
-        "You can register at our website. It only takes a few minutes to become a member!",
-        "To join, visit our registration page and fill in your details. Welcome aboard!"
+        "For Aadhaar services:\n\n1. Download e-Aadhaar: myaadhaar.uidai.gov.in\n2. Update details: Visit nearest Aadhaar Seva Kendra\n3. New registration: Visit enrollment center with ID and address proof\n4. Lock/Unlock biometrics: myaadhaar.uidai.gov.in\n\nHelpline: 1947 (Toll Free)"
       ]
     },
     {
-      "tag": "events",
-      "patterns": [
-        "Any upcoming events?", "What events are happening?", "Community events", "Are there any meetups?", "When is the next event?"
-      ],
+      "tag": "pan_card",
+      "patterns": ["pan card", "pan", "apply pan", "new pan card", "pan card status"],
       "responses": [
-        "Check out our Events page for the latest upcoming community meetups and activities!",
-        "We regularly host events. Visit the Events section on our website to stay updated.",
-        "Great question! Our community calendar is updated weekly with new events and meetups."
+        "For PAN Card:\n\n1. Visit: onlineservices.nsdl.com\n2. Click Apply Online under PAN\n3. Fill Form 49A\n4. Upload photo, signature, address proof and ID proof\n5. Pay fee approx Rs.110\n6. Track with acknowledgment number\n\nHelpline: 020-27218080"
       ]
     },
     {
-      "tag": "report_issue",
-      "patterns": [
-        "I want to report a problem", "Someone is being rude", "Report a user", "There's an issue", "I have a complaint", "Flag inappropriate content"
-      ],
+      "tag": "ration_card",
+      "patterns": ["ration card", "apply ration card", "new ration card", "how to get ration card"],
       "responses": [
-        "We're sorry to hear that. Please use the 'Report' button on the post or contact our moderators directly.",
-        "Thank you for flagging this. You can report issues using the report feature or email our moderation team.",
-        "Our moderation team is here to help. Please submit a report and we'll look into it promptly."
+        "For Ration Card in Maharashtra:\n\n1. Visit: rcms.mahafood.gov.in\n2. Click New Ration Card Application\n3. Fill family details and address\n4. Upload: Aadhaar of all members, address proof, income proof\n5. Submit and get application number\n6. Inspector will verify at your home\n7. Card issued within 30 days\n\nHelpline: 1967 or 1800-22-4950"
       ]
     },
     {
-      "tag": "community_rules",
-      "patterns": [
-        "What are the rules?", "Community guidelines", "What is allowed?", "Code of conduct", "Rules of the community"
-      ],
+      "tag": "driving_licence",
+      "patterns": ["driving licence", "driving license", "apply driving licence", "how to get driving licence", "learner licence"],
       "responses": [
-        "Our community is built on respect and kindness. You can read the full guidelines on our Rules page.",
-        "We have a few simple rules: be respectful, no spam, and help each other. Full details are on our Guidelines page.",
-        "Please check our Code of Conduct page for detailed community rules and expectations."
+        "How to apply for Driving Licence:\n\n1. Visit: parivahan.gov.in\n2. Select your state\n3. First apply for Learner Licence\n4. Book slot for LL test at RTO\n5. Pass the LL test\n6. After 30 days apply for Permanent DL\n7. Book driving test at RTO\n8. DL delivered to your address\n\nDocuments: Age proof, Address proof, Aadhaar, Photo"
+      ]
+    },
+    {
+      "tag": "voter_id",
+      "patterns": ["voter id", "voter card", "apply voter id", "voter registration", "new voter id"],
+      "responses": [
+        "How to apply for Voter ID:\n\n1. Visit: voters.eci.gov.in\n2. Click Register as New Voter\n3. Fill Form 6 online\n4. Upload: Age proof, Address proof, Photo\n5. BLO will verify at your address\n6. Voter ID issued within 30 days\n\nHelpline: 1950"
+      ]
+    },
+    {
+      "tag": "passport",
+      "patterns": ["passport", "apply passport", "new passport", "passport renewal", "how to get passport"],
+      "responses": [
+        "How to apply for Passport:\n\n1. Visit: passportindia.gov.in\n2. Register and fill application form\n3. Book appointment at nearest PSK\n4. Visit PSK with original documents\n5. Police verification done\n6. Passport delivered in 30-45 days\n\nHelpline: 1800-258-1800"
+      ]
+    },
+    {
+      "tag": "income_certificate",
+      "patterns": ["income certificate", "apply income certificate", "how to get income certificate"],
+      "responses": [
+        "How to get Income Certificate:\n\n1. Visit: aaplesarkar.mahaonline.gov.in\n2. Register and login\n3. Search for Income Certificate\n4. Fill in family income details\n5. Upload: Aadhaar, ration card, salary slip\n6. Certificate issued within 7-15 days\n\nOr visit nearest Seva Kendra."
+      ]
+    },
+    {
+      "tag": "caste_certificate",
+      "patterns": ["caste certificate", "apply caste certificate", "sc st certificate", "obc certificate"],
+      "responses": [
+        "How to get Caste Certificate:\n\n1. Visit: aaplesarkar.mahaonline.gov.in\n2. Select Caste Certificate under revenue services\n3. Fill application with caste details\n4. Upload: Aadhaar, ration card, school leaving certificate, father's caste proof\n5. Certificate issued within 15-30 days\n\nHelpline: 1800-120-8040"
+      ]
+    },
+    {
+      "tag": "pmay",
+      "patterns": ["pmay", "pradhan mantri awas yojana", "housing scheme", "free house scheme", "apply pmay"],
+      "responses": [
+        "Pradhan Mantri Awas Yojana (PMAY):\n\n1. Visit: pmaymis.gov.in\n2. Click Citizen Assessment\n3. Select your category (EWS/LIG/MIG)\n4. Enter Aadhaar number\n5. Fill personal, income and property details\n6. Submit and note application ID\n\nEligibility: Income below Rs.18 lakh, No pucca house in family\nHelpline: 1800-11-6163"
+      ]
+    },
+    {
+      "tag": "rti",
+      "patterns": ["rti", "right to information", "file rti", "how to file rti", "rti application"],
+      "responses": [
+        "How to file RTI:\n\n1. Visit: rtionline.gov.in\n2. Click Submit Request\n3. Select ministry/department\n4. Write your information request clearly\n5. Pay Rs.10 fee online\n6. Response within 30 days\n\nTip: Be specific in your question. File First Appeal if not satisfied."
+      ]
+    },
+    {
+      "tag": "cyber_crime",
+      "patterns": ["cyber crime", "online fraud", "fraud", "scam", "hacked", "upi fraud", "bank fraud", "online cheating"],
+      "responses": [
+        "To report Cyber Crime:\n\n1. Call helpline: 1930 IMMEDIATELY for financial fraud\n2. Visit: cybercrime.gov.in\n3. Fill complaint with evidence - screenshots, transaction details\n4. Note complaint number for tracking\n\nFor UPI/Bank Fraud: Call 1930 immediately to freeze transaction!"
+      ]
+    },
+    {
+      "tag": "emergency",
+      "patterns": ["emergency", "accident", "fire", "police", "ambulance", "emergency number", "urgent help"],
+      "responses": [
+        "Emergency Numbers:\n\n🚨 All Emergencies: 112\n🚔 Police: 100\n🚑 Ambulance: 102\n🔥 Fire: 101\n👩 Women Helpline: 1091\n🧒 Child Helpline: 1098\n💻 Cyber Crime: 1930\n\nCall 112 for immediate emergency!"
+      ]
+    },
+    {
+      "tag": "government_services",
+      "patterns": ["government services", "what services", "available services", "what can you help", "list of services"],
+      "responses": [
+        "I can help you with:\n\n🪪 Digital ID: Aadhaar, PAN, Voter ID, Passport, Driving Licence\n📚 Scholarships: MahaDBT\n🏠 Housing: PMAY\n📋 Certificates: Income, Caste, Ration Card\n📢 RTI: File information requests\n🚨 Emergency: All helpline numbers\n\nJust ask about any service!"
       ]
     },
     {
       "tag": "get_help",
-      "patterns": [
-        "I need help", "Can you help me?", "I have a question", "Support please", "Need assistance", "Help me"
-      ],
+      "patterns": ["I need help", "Can you help me", "help me", "help", "Need assistance"],
       "responses": [
-        "Of course! Tell me what you need help with and I'll do my best to assist.",
-        "I'm here to help! What's on your mind?",
-        "Sure thing! Go ahead and describe your issue and we'll figure it out together."
-      ]
-    },
-    {
-      "tag": "contact",
-      "patterns": [
-        "How do I contact support?", "Email address", "Contact the team", "Reach out to admins", "Talk to a human"
-      ],
-      "responses": [
-        "You can reach our support team at support@ourcommunity.com or through the Contact Us page.",
-        "For direct assistance, email us or use the Contact form on our website.",
-        "Our team is available via email and the community help desk. We usually respond within 24 hours."
+        "Sure! I can help with government services, scholarships, digital ID, emergency numbers and more. What do you need?",
+        "Ask me about: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport or Emergency numbers!"
       ]
     },
     {
       "tag": "fallback",
       "patterns": [],
       "responses": [
-        "I'm not sure I understand. Could you rephrase that?",
-        "Hmm, I didn't quite get that. Can you try asking differently?",
-        "I'm still learning! For complex queries, please reach out to our support team."
+        "I can help you with: Aadhaar, PAN card, Ration card, MahaDBT scholarship, Driving Licence, Voter ID, Passport, RTI and emergency numbers. Please ask about these!",
+        "Sorry, I didn't understand. Try asking about scholarships, aadhaar, pan card, ration card, driving licence or emergency numbers."
       ]
     }
   ]
