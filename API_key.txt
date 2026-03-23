@@ -1,2 +1,0 @@
-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
-$env:GROQ_API_KEY="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"
