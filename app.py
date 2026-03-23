@@ -132,14 +132,50 @@ def chat():
 
 def find_intent_response(user_message):
     """Find matching response from intents"""
+    user_message = user_message.lower().strip()
+    
+    # Check each intent
     for intent in intents.get('intents', []):
         for pattern in intent.get('patterns', []):
             if pattern.lower() in user_message or user_message in pattern.lower():
                 import random
                 responses = intent.get('responses', [])
                 return random.choice(responses) if responses else "I'm not sure about that."
-
-    return "Sorry, I didn't understand that. Can I help you with our services like Government Services, Digital Identity, or Citizen Engagement?"
+    
+    # Keyword based matching
+    keyword_map = {
+        'mahadbt': 'mahadbt_scholarship',
+        'scholarship': 'mahadbt_scholarship',
+        'aadhaar': 'aadhaar',
+        'aadhar': 'aadhaar',
+        'pan': 'pan_card',
+        'ration': 'ration_card',
+        'driving': 'driving_licence',
+        'licence': 'driving_licence',
+        'voter': 'voter_id',
+        'passport': 'passport',
+        'income certificate': 'income_certificate',
+        'caste': 'caste_certificate',
+        'emergency': 'emergency',
+        'fraud': 'cyber_crime',
+        'cyber': 'cyber_crime',
+        'help': 'get_help',
+    }
+    
+    for keyword, tag in keyword_map.items():
+        if keyword in user_message:
+            for intent in intents.get('intents', []):
+                if intent['tag'] == tag:
+                    import random
+                    return random.choice(intent['responses'])
+    
+    # Fallback
+    for intent in intents.get('intents', []):
+        if intent['tag'] == 'fallback':
+            import random
+            return random.choice(intent['responses'])
+    
+    return "Sorry, I didn't understand. Please ask about Aadhaar, PAN card, MahaDBT scholarship or other services!"
 
 # ==================== API ENDPOINTS ====================
 
